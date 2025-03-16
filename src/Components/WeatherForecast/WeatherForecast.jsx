@@ -4,24 +4,14 @@ import WeatherData from './SubComps/WeatherData';
 import WeatherIcon from './SubComps/WeatherIcon';
 
 
-const daysOfWeek = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-]
-
 const today = new Date(Date.now()); 
 
-const WeatherForecast = () => {
+const WeatherForecast = (forecast) => {
     return (
         <div className="weather">
-            <h2>{daysOfWeek[today.getDay()]}</h2>
-            <WeatherIcon />
-            <WeatherData />
+            <h2>{forecast.day}</h2>
+            <WeatherIcon key={forecast.day} {...forecast}/>
+            <WeatherData key={forecast.day} {...forecast}/>
         </div>
     );
 };

@@ -1,8 +1,8 @@
 
-const WeatherIcon = () => {
+const WeatherIcon = (forecast) => {
     return (
         <>
-            <img src="./weathericon.png" alt="the weather icon" />
+            <img src={forecast.img} alt={forecast.imgAlt} />
         </>
     );
 };
